@@ -2,7 +2,7 @@
 	<body>
 		<?php if(have_posts()):?>
 		<h1>Wordpress avec articles </h1>
-
+		<div class="row">
 			<?php while(have_posts()): the_post(); ?>
 				<div class="card" style="width: 18rem;">
 				  <div class="card-body">
@@ -15,6 +15,21 @@
 				  </div>
 				</div>
 			<?php endwhile ?>
+		</div>
+
+
+		<nav aria-label="Pagination">
+		  <ul class="pagination">
+		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		  </ul>
+		</nav>
+			<?php cours_wordpress_pagination() ?>
+
+			
 		<?php else:?>
 			<h1>Pas d'articles </h1>
 		<?php endif;?>

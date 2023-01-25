@@ -4,6 +4,8 @@
 function cours_wordpress_1(){
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
+	add_theme_support('menus');
+	register_nav_menu('header','menu-cours-wordpress');
 }
 
 function cours_wordpress_register_assets(){
@@ -21,10 +23,30 @@ function cours_wordpress_title_separator (){
 	return '|';
 }
 
+function cours_wordpress_menu_class($classes) {
+	$classes[] = 'nav-item';
+	return $classes;
+}
 
+function cours_wordpress_menu_link($attrs) {
+	$attrs['class'] = 'nav-link';
+	return $attrs;
+}
 
-
+function cours_wordpress_pagination(){
+	echo '<nav aria-label="Pagination">';
+	echo '<ul class="pagination"';
+	$pages = paginate_links(['type' =>'array']);
+	foreach($pages as $page){
+		echo'<li class="page-item"';
+		echo $page;
+		echo '</li>';
+	}
+	echo '</nav>';
+}
 
 add_action('after_setup_theme','cours_wordpress_1');
 add_action('wp_enqueue_scripts','cours_wordpress_register_assets');
 add_filter('document_title_separator','cours_wordpress_title_separator');
+add_filter('nav_menu_css_class','cours_wordpress_menu_class');
+add_filter('nav_menu_link_attributes','cours_wordpress_menu_link');
