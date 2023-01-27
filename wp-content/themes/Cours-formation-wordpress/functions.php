@@ -35,11 +35,16 @@ function cours_wordpress_menu_link($attrs) {
 
 function cours_wordpress_pagination(){
 	echo '<nav aria-label="Pagination">';
-	echo '<ul class="pagination"';
+	echo '<ul class="pagination">';
 	$pages = paginate_links(['type' =>'array']);
 	foreach($pages as $page){
-		echo'<li class="page-item"';
-		echo $page;
+		$active = strpos($page,'current') !== false;
+		$class ='page_item';
+		if($active){
+			$class .= ' active';
+		}
+		echo'<li class="'. $class. '">';
+		echo str_replace('page-numbers','page-link',$page);
 		echo '</li>';
 	}
 	echo '</nav>';
