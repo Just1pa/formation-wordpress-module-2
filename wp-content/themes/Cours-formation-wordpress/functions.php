@@ -6,6 +6,7 @@ function cours_wordpress_1(){
 	add_theme_support('post-thumbnails');
 	add_theme_support('menus');
 	register_nav_menu('header','menu-cours-wordpress');
+	add_image_size('post-thumbnails',350,215,true);
 }
 
 function cours_wordpress_register_assets(){
@@ -34,9 +35,12 @@ function cours_wordpress_menu_link($attrs) {
 }
 
 function cours_wordpress_pagination(){
-	echo '<nav aria-label="Pagination">';
-	echo '<ul class="pagination">';
 	$pages = paginate_links(['type' =>'array']);
+	if($page === null){
+		return;
+	}
+	echo '<nav aria-label="Pagination" class="my-4">';
+	echo '<ul class="pagination">';
 	foreach($pages as $page){
 		$active = strpos($page,'current') !== false;
 		$class ='page_item';
