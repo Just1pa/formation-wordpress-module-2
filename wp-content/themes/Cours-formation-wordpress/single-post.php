@@ -4,7 +4,7 @@
 
 			<?php while(have_posts()): the_post(); ?>
 				<h1><?php the_title(); ?></h1>
-				<?php if(get_post_meta(get_the_ID(), 'cours_sponso', true ) ==='1'):?>
+				<?php if(get_post_meta(get_the_ID(), SponsoMetaBox::META_KEY, true ) ==='1'):?>
 					<div class="alert alert-info">Cet article est sponsorisé ! </div>
 				<?php endif ?>
 				<p>
