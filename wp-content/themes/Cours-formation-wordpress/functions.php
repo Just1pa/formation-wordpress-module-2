@@ -55,12 +55,29 @@ function cours_wordpress_pagination(){
 }
 
 function cours_wordpress_add_custom_box(){
-	add_meta_box('cours_sponso','Sponsoring','cours_wordpress_render_sponso_box','post');
+	add_meta_box('cours_sponso','Sponsoring','cours_wordpress_render_sponso_box','post','side');
 }
 
 function cours_wordpress_render_sponso_box(){
+	?>
+	<input type="hidden" value="0" name="cours_sponso">
+	<input type="checkbox" value="1" name="cours_sponso">
+	<label for="cours-sponso">Cet article est sponsorisé ! </label>
+	<?php
+}
+
+function cours_wordpress_save_sponso($post_id){
+	if(array_key_exists('cours_sponso', $_POST)){
+		if($_POST['cours_sponso']==='0'){
+			delete_post_meta($post_id,'cours_sponso');
+		}
+		else{
+			update_post_meta($post_id,'cours_sponso', 1);
+		}
+	}
 
 }
+
 
 add_action('after_setup_theme','cours_wordpress_1');
 add_action('wp_enqueue_scripts','cours_wordpress_register_assets');
@@ -68,3 +85,4 @@ add_filter('document_title_separator','cours_wordpress_title_separator');
 add_filter('nav_menu_css_class','cours_wordpress_menu_class');
 add_filter('nav_menu_link_attributes','cours_wordpress_menu_link');
 add_action('add_meta_boxes','cours_wordpress_add_custom_box');
+add_action('save_post','cours_wordpress_save_sponso');
