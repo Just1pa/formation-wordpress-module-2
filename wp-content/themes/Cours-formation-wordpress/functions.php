@@ -54,7 +54,28 @@ function cours_wordpress_pagination(){
 	echo '</nav>';
 }
 
+function cours_wordpress_1_init(){
+	register_taxonomy('Portfolio','post',[
+		'labels' =>[
+			'name' => 'Portfolio cours',
+			'singular_name' => 'Projet',
+			'plural_name' => 'Projets',
+			'search_items' => 'Rechercher des Projets',
+			'all_items' => 'Tous les projets',
+			'edit_item' => 'Editer le projet',
+			'update_item' => 'Mettre a jour le projet',
+			'add_new_item' => 'Ajouter un nouveau projet',
+			'new_item_name' => 'Ajouter un nouveau projet',
+			'menu_name' => 'Projets',
+		],
+		'show_in_rest' => true,
+		'hierarchical' => true,
+		'show_admin_column'=> true,
+	]
+);
+}
 
+add_action('init', 'cours_wordpress_1_init');
 add_action('after_setup_theme','cours_wordpress_1');
 add_action('wp_enqueue_scripts','cours_wordpress_register_assets');
 add_filter('document_title_separator','cours_wordpress_title_separator');
