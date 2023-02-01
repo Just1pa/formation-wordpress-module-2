@@ -3,4 +3,8 @@ Theme name: Cours-wordpress-module-2
 
 */
 
+#navbarSupportedContent > form{
+	display: flex!important;
+}
+
 
