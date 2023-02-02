@@ -22,7 +22,7 @@
 			<ul class="nav nav-pills">
 				<?php foreach($projets as $projet): ?>
 					<li class="nav-item">
-						<a href="<?php get_term_link($projet)?>" class="nav-link <?php is_tax( 'Portfolio', $projet -> term_id) ? 'active' : '' ?>"><?= $projet -> name ?></a>
+						<a href="<?= get_term_link($projet) ?>" class="nav-link <?= is_tax( 'Portfolio', $projet -> term_id) ? 'active' : '' ?>"><?= $projet -> name ?></a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
