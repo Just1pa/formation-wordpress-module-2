@@ -8,7 +8,6 @@
 <?php endwhile; ?>
 
 		<div>
-			<?php wp_list_categories(['taxonomy' => 'Portfolio','title_li' => '']); ?>
 			<?php $projets = get_terms(['taxonomy' => 'Portfolio']); ?>
 			<ul class="nav nav-pills">
 				<?php foreach($projets as $projet): ?>
