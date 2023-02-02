@@ -1,4 +1,4 @@
 function myFunc() {
-  alert("ça marche ");
+  console.log("ça marche ");
 }
 jQuery(myFunc);

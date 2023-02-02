@@ -7,4 +7,16 @@
 	<a href="<?= get_post_type_archive_link('post');?>">Voir les dernières actualités </a>
 <?php endwhile; ?>
 
+		<div>
+			<?php wp_list_categories(['taxonomy' => 'Portfolio','title_li' => '']); ?>
+			<?php $projets = get_terms(['taxonomy' => 'Portfolio']); ?>
+			<ul class="nav nav-pills">
+				<?php foreach($projets as $projet): ?>
+					<li class="nav-item">
+						<a href="<?php get_term_link($projet)?>" class="nav-link <?php is_tax( 'Portfolio', $projet -> term_id) ? 'active' : '' ?>"><?= $projet -> name ?></a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+
 <?php get_footer(); ?>
