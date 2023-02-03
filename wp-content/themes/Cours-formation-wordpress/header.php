@@ -6,9 +6,15 @@
   	<?php wp_head() ?>
   </head>
   <body>
+<?php if(is_page_template('avis-client.php'))
+ {
 
+?><div class="container" style="padding-top:30px;"><?php
 
-  	<div class="container">
+}
+else {?>
+
+<div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
     <a class="navbar-brand" href="/wordpress/"><img src="https://justinpageaud.alwaysdata.net/img/logo.png" alt="logo" class="logo"></a>
     <!--<p><?bloginfo( 'description' )?></p>-->
@@ -26,6 +32,11 @@
       <?php get_search_form() ?>
     </div>
   </nav>
+
+<?php } 
+?>
+
+  	
 
 
 

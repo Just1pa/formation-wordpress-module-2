@@ -16,7 +16,7 @@ function cours_wordpress_register_assets(){
 	wp_register_script('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js',['popper','jquery'],false,true);
 	wp_register_script('popper','https://unpkg.com/@popperjs/core@2',[],false,true);
 	wp_register_script('jquery','https://code.jquery.com/jquery-3.6.3.min.js',[],false,true);
-	wp_register_script('avis-justin',get_template_directory_uri() .'/assets/avis-justin.js',array('jquery'), null, true);
+	wp_register_script('avis-justin',get_template_directory_uri() .'/assets/avis-justin.js',['jquery'], null, true);
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('style');
 	wp_enqueue_script('bootstrap');

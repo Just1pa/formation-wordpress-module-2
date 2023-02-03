@@ -10,11 +10,16 @@
 		<?php if(have_posts()):?>
 
 			<?php while(have_posts()): the_post(); ?>
-				<h1><?php the_title(); ?></h1>
-				<p class="avis-client">Je suis un 
-					<form>
+				<h1 class="text-center">Simulateur: Ma note va t'elle baisser en dessous de 4 ?</h1>
+				<div class="px-4 py-2 my-5 text-center">
+				<p class="explication">Estimation du nombre de mois d'<span class="mois-avis">avis négatifs consécutifs </span>pour constater une note qui descend en dessous de 4, par verticale ! * </p>
+				<div class="px-4 pt-4 mt-3 text-center">	
+				
+				<div class="px-4 py-5 my-5 text-center" id="formulaire">
+				<span class="avis-client">Je suis un </span>
+				<form action="" method="post" id="avis-client" >
 					  <div class="form-group">
-					    <select class="form-control" id="exampleFormControlSelect1">
+					    <select class="form-control" id="metier">
 					      <option id="constructeur">constructeur</option>
 					      <option id="promoteur">promoteur</option>
 					      <option id="agent_immobilier">agent immobilier</option>
@@ -22,19 +27,17 @@
 					      <option id="Immo_luxe">Immo de luxe</option>
 					    </select>
 					  </div>
-					</form>, j'ai une note de 
-					<form>
+					<span class="avis-client">, j'ai une note de </span>
 					  <div class="form-group">
-					    <select class="form-control" id="exampleFormControlSelect1">
-					      <option id="note4">4,5</option>
-					      <option id="note5">5</option>
+					    <select class="form-control" id="note">
+					      <option id="4.5">4,5</option>
+					      <option id="5">5</option>
 					    </select>
 					  </div>
-					</form>
-					et j'ai actuellement
-					<form>
+					<span class="avis-client">et j'ai actuellement</span>
+					
 					  <div class="form-group">
-					    <select class="form-control" id="exampleFormControlSelect1">
+					    <select class="form-control" id="nombre_avis">
 					      <option id="10">10 avis </option>
 					      <option id="20">20 avis </option>
 					      <option id="30">30 avis </option>
@@ -54,11 +57,15 @@
 						  <option id="170">170 avis</option>
 					    </select>
 					  </div>
+					<input type="submit" value="Simulation" name="envoyer">
 					</form>
+					</div>
+					<p>*Si nous sélectionnons les bons partenaires et les clients les plus engagés, il y a peu de risques que quelques notes négtives pénalisent grandement leurs notes moyennes ! *(données de collectes moyennes par verticales constatées en 2022 fournies par Pierre) </p>
 
-
-
-				</p>	
+				</div>
+					<div class="px-4 py-2 my-5 text-center" id="resultat">
+						
+					</div>
 				<?php the_content(); ?>
 			<?php endwhile; endif;?>
 
