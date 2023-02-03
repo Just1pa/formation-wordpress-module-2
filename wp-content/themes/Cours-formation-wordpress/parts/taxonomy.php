@@ -1,10 +1,11 @@
 <div>
 			<?php $projets = get_terms(['taxonomy' => 'Portfolio']); ?>
-			<ul class="nav nav-pills">
+			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 				<?php foreach($projets as $projet): ?>
-					<li class="nav-item">
-						<a href="<?= get_term_link($projet) ?>" class="nav-link <?= is_tax( 'Portfolio', $projet -> term_id) ? 'active' : '' ?>"><?= $projet -> name ?></a>
-					</li>
+					<button type="button" class="btn <?= is_tax( 'Portfolio', $projet -> term_id) ? 'btn-primary' : 'btn-outline-secondary' ?>">
+						<a href="<?= get_term_link($projet) ?>"> <?= $projet -> name ?></a>
+					</button>
 				<?php endforeach; ?>
-			</ul>
-</div>
+
+			</div>
+

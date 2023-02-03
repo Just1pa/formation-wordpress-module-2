@@ -12,13 +12,13 @@ function cours_wordpress_1(){
 function cours_wordpress_register_assets(){
 
 	wp_register_style('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css');
-	wp_register_style('style',get_template_directory_uri() .'/assets/style.css',[],null,true);
+	wp_register_style('Cours-wordpress-module-2',get_template_directory_uri() .'/style.css',[],null,);
 	wp_register_script('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js',['popper','jquery'],false,true);
 	wp_register_script('popper','https://unpkg.com/@popperjs/core@2',[],false,true);
 	wp_register_script('jquery','https://code.jquery.com/jquery-3.6.3.min.js',[],false,true);
 	wp_register_script('avis-justin',get_template_directory_uri() .'/assets/avis-justin.js',['jquery'], null, true);
 	wp_enqueue_style('bootstrap');
-	wp_enqueue_style('style');
+	wp_enqueue_style('Cours-wordpress-module-2');
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('avis-justin');
 }
