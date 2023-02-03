@@ -3,8 +3,31 @@ Theme name: Cours-wordpress-module-2
 
 */
 
+/* Menu */
 #navbarSupportedContent > form{
 	display: flex;
 }
 
 
+/* footer */
+
+h3.footer-titre{
+    color: #ffffff;
+    font-size: x-large;
+    margin-bottom: 1px;
+}
+
+#footer{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #053B44;
+  padding-bottom: 3%;
+}
+
+#footer>div{
+  text-align: -webkit-center;
+}
+
+#footer>div>p{
+    color: white;
+  }
