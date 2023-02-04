@@ -12,7 +12,7 @@ else {?>
 	<section id="footer">
 	<div>
 		<h3 class="footer-titre">Content</h3>
-			<p>Consetetur</p>
+			<p><?= get_option( 'agence_horaire')?></p>
 			<p>adipiscing</p>
 	</div>
 	<div>
