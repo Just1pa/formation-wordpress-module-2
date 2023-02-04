@@ -77,6 +77,15 @@ function cours_wordpress_1_init(){
 		'show_admin_column'=> true,
 	]
 );
+	register_post_type('bien',[
+		'label'=>'Bien',
+		'public'=>true,
+		'menu_position'=>4,
+		'menu_icon'=>'dashicons-building',
+		'supports'=> ['title', 'editor','thumbnail'],
+		'show_in_rest'=>true,
+		'has-archive'=>true,
+	]);
 }
 
 add_action('init', 'cours_wordpress_1_init');
