@@ -3,12 +3,14 @@
 class AgenceMenuPage {
 
 	const GROUP ='agence_options';
-
+	/*1 on enregistre*/
 	public static function register(){
 		add_action('admin_menu',[self::class,'addMenu']);
 		add_action('admin_init',[self::class,'registerSettings']);
 		add_action('admin_enqueue_scripts',[self::class,'registerScripts']);
 	}
+
+	/*2 on créé les fonctions d'enregistrements */
 
 	public static function registerScripts($suffix){
 		if ($suffix === 'settings_page_agence_options'){
@@ -17,8 +19,6 @@ class AgenceMenuPage {
 		wp_enqueue_script('cours_wordpress_2_admin',get_template_directory_uri().'/assets/admin.js',['flatpickr'],false,true);
 		wp_enqueue_style('flatpickr');
 		}
-		
-
 
 	}
 
@@ -44,9 +44,12 @@ class AgenceMenuPage {
 
 	}
 
+	/*2 On ajoute les éléments soit dans le menu soit sur la page */
+
 	public static function addMenu(){
 		add_options_page( "Gestion de l'agence", "Agence", "manage_options",self::GROUP, [self::class,'render']);
 	}
+	
 	public static function render(){
 		?>
 		<h1>Gestion de l'agence</h1>
