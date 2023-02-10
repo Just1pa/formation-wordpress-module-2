@@ -60,7 +60,7 @@
 					<input type="submit" value="Simulation" name="envoyer">
 					</form>
 					</div>
-					<p>*Si nous sélectionnons les bons partenaires et les clients les plus engagés, il y a peu de risques que quelques notes négtives pénalisent grandement leurs notes moyennes ! *(données de collectes moyennes par verticales constatées en 2022 fournies par Pierre) </p>
+					<p>*Si nous sélectionnons les bons partenaires et les clients les plus engagés, il y a <strong>peu de risques que quelques notes négatives pénalisent rapidement la note moyenne !</strong> *(Source: données de collectes moyennes par verticales constatées en 2022) </p>
 
 				</div>
 					<div class="px-4 py-2 my-5 text-center" id="resultat">

@@ -1,12 +1,10 @@
-<?php if(is_page_template('avis-client.php'))
+<?php wp_footer()
+ 
+ if(is_page_template('avis-client.php'))
  {
-
-?>	</footer>
-<?php wp_footer()?>
-</body>
-</html><?php
-
 }
+
+
 else {?>
 	<footer>
 	<section id="footer">
