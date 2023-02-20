@@ -18,7 +18,6 @@
 				$portfolios=array_map(function($term){
 					return $term->term_id;
 				},get_the_terms(get_post(),'Portfolio'));
-				var_dump($portfolios);die();
 				$query = new WP_Query([
 					'post__not_in'=>[get_the_ID()],
 					'post_type'=> 'post',
