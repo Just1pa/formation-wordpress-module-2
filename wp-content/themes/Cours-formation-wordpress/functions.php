@@ -153,8 +153,18 @@ function cours_wordpress_pre_get_posts($query){
 	if(is_admin() || !is_home() || !$query->is_main_query()){
 		return;
 	}
-	var_dump($query);die();
 }
 
 add_action('pre_get_posts','cours_wordpress_pre_get_posts');
 
+function cours_wordpress_widget(){
+	register_sidebar([
+		'id'=> 'homepage',
+		'name'=>'Sidebar Accueil',
+
+	]);
+}
+
+
+
+add_action('widgets_init', 'cours_wordpress_widget');
