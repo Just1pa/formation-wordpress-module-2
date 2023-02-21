@@ -2,7 +2,6 @@
 
 	<?php while(have_posts()): the_post() ?>
 
-<main class="container">
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-4 fst-italic">Module 2 - Cours de Développement avec Wordpress</h1>
@@ -124,6 +123,8 @@
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded">
+          <?= get_sidebar( 'homepage' ); ?>
+         <!-- 
           <h4 class="fst-italic">About</h4>
           <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
         </div>
@@ -154,11 +155,9 @@
             <li><a href="#">Facebook</a></li>
           </ol>
         </div>
-      </div>
+      --></div>
     </div>
   </div>
-
-</main>
 
 
 

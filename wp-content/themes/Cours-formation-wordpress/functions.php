@@ -161,6 +161,10 @@ function cours_wordpress_widget(){
 	register_sidebar([
 		'id'=> 'homepage',
 		'name'=>'Sidebar Accueil',
+		'before_widget'=>'<div class="p-4 %2$s" id="%1$s">',
+		'after_widget' =>'</div>',
+		'before_title'=>'<h4 class="fst-italic">',
+		'after_title'=>'</h4>'
 
 	]);
 }
