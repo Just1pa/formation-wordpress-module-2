@@ -157,7 +157,9 @@ function cours_wordpress_pre_get_posts($query){
 
 add_action('pre_get_posts','cours_wordpress_pre_get_posts');
 
+require_once 'widgets/YoutubeWidget.php';
 function cours_wordpress_widget(){
+	register_widget(YoutubeWidget::class);
 	register_sidebar([
 		'id'=> 'homepage',
 		'name'=>'Sidebar Accueil',
