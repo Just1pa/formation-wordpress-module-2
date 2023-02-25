@@ -158,6 +158,7 @@ function cours_wordpress_pre_get_posts($query){
 add_action('pre_get_posts','cours_wordpress_pre_get_posts');
 
 require_once 'widgets/YoutubeWidget.php';
+
 function cours_wordpress_widget(){
 	register_widget(YoutubeWidget::class);
 	register_sidebar([
@@ -166,11 +167,18 @@ function cours_wordpress_widget(){
 		'before_widget'=>'<div class="p-4 %2$s" id="%1$s">',
 		'after_widget' =>'</div>',
 		'before_title'=>'<h4 class="fst-italic">',
-		'after_title'=>'</h4>'
+		'after_title'=>'</h4>',
+		'show_in_rest'=>'false'
 
 	]);
 }
 
-
-
 add_action('widgets_init', 'cours_wordpress_widget');
+
+add_action( 'after_setup_theme' , 'cours_wordpress_widget' ); 
+
+add_filter( 'theme_page_templates', function( $templates ) {
+    unset( $templates['widget.php'] );
+    return $templates;
+});
+

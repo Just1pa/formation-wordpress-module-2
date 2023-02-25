@@ -10,10 +10,16 @@ class YoutubeWidget extends WP_Widget{
 	}
 
 	public function form($instance){
+		$title=$instance['title'] ?? '';
 		?>
 		<p>
 			<label for="<?= $this->get_field_id('title')?>">Titre</label>
-			<input class="widefat" type="text" name="<?= $this->get_field_name('title')?>" id="<?= $this->get_field_name('title')?>">
+			<input 
+			class="widefat" 
+			type="text" 
+			name="<?= $this->get_field_name('title')?>" 
+			value="<?=esc_attr($instance);?>"
+			id="<?= $this->get_field_name('title')?>">
 		</p>
 		<?php
 
